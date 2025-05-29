@@ -1,33 +1,52 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!doctype html>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Lavariet's Page</title>
-	<link rel="stylesheet" type="text/css" href="src/style/globalstyle.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-	<script src="src/main.js"></script>
+	<script>
+		const styles = new CSSStyleSheet()
+		styles.replace(`
+			html {
+				width: 100%;
+				height: 100%;
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+			}
+			body{
+				margin:0;
+			}
+			#header {
+				width: 100%;
+				display: flex;
+			}
+
+			footer {
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				padding: 1rem 1rem 1rem !important;
+			}
+
+			:root {
+				--primary-color: #007BFF;
+				--primary-color-selected: #0056b3;
+				--base-border-radius: 5px;
+				--base-body-text: 16px;
+				--base-margin: 4px;
+			}
+		`)
+		document.adoptedStyleSheets = [styles]
+	</script>
+	<script type="module" src="src/script/components/components.js"></script>
 </head>
 
 <body>
-	<header id="header is-fixed-top">
-		<nav class="navbar" role="navigation" aria-label="main navigation">
-			<div class="navbar-brand">
-				<a class="navbar-item" href="/">Home</a>
-			</div>
-		</nav>
-	</header>
+	<lava-header title="Blabla"> </lava-header>
 	<main>
-		To be created
+		<lava-highlight name="Lavariet"></lava-highlight>
+		<lava-button label="Click Me"></lava-button>
 	</main>
-	<footer class="footer">
-		<div class="content has-text-centered">
-			<p id="footer-text">
-				&copy; Lavariet
-			</p>
-		</div>
-	</footer>
 </body>
 
 </html>
